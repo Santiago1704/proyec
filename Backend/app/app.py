@@ -3,7 +3,6 @@ from fastapi import FastAPI, HTTPException, Request, Depends, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
-from passlib.context import CryptContext
 from typing import List, Optional
 import mysql.connector
 
@@ -26,7 +25,7 @@ MYSQL_HOST = 'localhost'
 MYSQL_DB = 'walking_legs'
 
 # Configuración del Contexto de la Contraseña
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+""" pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto") """
 
 
 # Modelos Pydantic para validación de datos
@@ -87,7 +86,7 @@ async def login(request: Request):
         usuario = cursor.fetchone()
         cursor.close()
 
-        if usuario and pwd_context.verify(password, usuario[4]):
+        if usuario (password, usuario[4]):
             response = {
                 "message": "Logged in successfully",
                 "dataLogin": {
@@ -120,11 +119,10 @@ async def registrar_cliente(user_data: UserCreate, db: mysql.connector.connectio
         if usuario:
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail={"message": "El correo ya está registrado."})
         else:
-            password_encriptada = pwd_context.hash(user_data.password)
-
+            
             cursor.execute(
                 'INSERT INTO usuarios (nombre, apellido, documento, correo, contraseña, telefono, direccion, idroles) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)',
-                (user_data.name, user_data.apellido, user_data.documento, user_data.email, password_encriptada, user_data.telefono, user_data.direccion, 2)
+                (user_data.name, user_data.apellido, user_data.documento, user_data.email, user_data.password, user_data.telefono, user_data.direccion, 2)
             )
 
             db.commit()
