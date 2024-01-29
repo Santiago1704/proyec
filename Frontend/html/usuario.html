@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="../images/logonuevo.jpg" type="image/x-icon">
+  <script src="../js/axiosolicitarpaseo.js"></script>
+  <title>Walking legs</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="../css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../css/responsive.css" rel="stylesheet" />
+  <!-- Add these lines to include Bootstrap and Popper.js -->
+ <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.3/dist/js/bootstrap.min.js"></script>
+ 
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="../html/usuario.html">
+            <img src="../images/logonuevopeq.jpg" alt="">
+            <span>
+              Walking legs
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#servicios">servicios </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#galeria">Galeria de imagenes </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#clientes"> Clinica</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contacto">Contactanos</a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="html/buy.html"> Buy now </a>
+                </li> -->   
+              </ul>
+              <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+              </form>
+             <!--  <a class="btn btn-primary ml-auto"  data-bs-toggle="modal" data-bs-target="#exampleModal" >Cerrar sesión</a>
+              
+              <li>
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                <div class="modal-dialog">
+            
+                    <div class="modal-content">
+            
+                        <div class="modal-header">
+            
+                            <h5 class="modal-title" id="exampleModalLabel">Cerrar sesion</h5>
+            
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            
+                        </div>
+            
+                        <div class="modal-body">
+            
+                            <p>¿Desea cerrar la sesion?</p>
+            
+                        </div>
+            
+                        <div class="modal-footer">
+            
+                            <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            
+                            <a class="btn btn-primary ml-auto" onclick="cerrarSesion()" href="../index.html" >Aceptar</a>
+            
+                        </div>
+            
+                    </div>
+            
+                </div>
+            </div>
+            </li>
+             -->
+             
+            
+            <div class="quote_btn-container  d-flex justify-content-center">
+              <a class="btn  ml-auto" onclick="cerrarSesion()" href="../index.html" >Cerrar sesión</a>
+               
+            </div>
+
+            
+        </nav>
+
+      </div>
+    </header>
+
+    <h2 class="text-center mt-4"><span class="text-primary">Solicitud de Paseo</span></h2>
+    <form id="formulario">
+      <div class="d-flex justify-content-center">
+        <div>
+          <!-- Aquí va tu código existente -->
+          <div class="mb-3 mt-4">
+            <label for="servicio" class="form-label"><span class="text-primary">Tipo de Mascota  </span></label>
+            <select class="form-select" id="tipo_mascota" name="tipo_mascota">
+              <option value="mascota">Perro</option>
+              <option value="mascota">Gato</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="direccion" class="form-label"><span class="text-primary">Dirección</span></label>
+            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Ingrese su dirección">
+          </div>
+
+          <div class="mb-3">
+            <label for="duracion" class="form-label"><span class="text-primary">Duracion</span></label>
+            <input type="text" class="form-control" id="duracion" name="duracion" placeholder="Ingrese la duracion del paseo">
+          </div>
+          <div class="mb-3">
+            <label for="fecha" class="form-label"><span class="text-primary">Fecha y hora programada</span></label>
+            <input type="date" class="form-control" id="fecha" name="fecha">
+          </div>
+          <button type="submit" class="btn btn-primary mt-4" onclick="solicitarpaseo()">Solicitar</button>
+        </div>
+      </div>
+
+    </form>
+    <!-- end header section -->
+    <!-- slider section -->
+    <!--<section class=" slider_section position-relative">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-4 offset-md-2">
+                  <div class="slider_detail-box">
+                    <h1>
+                      Paseo
+                      <span>
+                        para tu mascota
+                      </span>
+                    </h1>
+                    <p>
+                      Regala a tu mascota un paseo lleno de alegría. ¡Reserva ahora y dale a tu amigo peludo un día
+                      inolvidable!
+                    </p>
+                    <div class="btn-box">
+                      <a href="" class="btn-1">
+                        Comprar
+                      </a>
+                      <a href="" class="btn-2">
+                        Contacto
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="slider_img-box">
+                    <img src="../images/paseo.jpg" class="rounded-circle" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="carousel-item">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-4 offset-md-2">
+                  <div class="slider_detail-box">
+                    <h1>
+                      Professional
+                      <span>
+                        Care Your Pet
+                      </span>
+                    </h1>
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry.
+                      Lorem Ipsum has been the industry's standard dummy text ever
+                    </p>
+                    <div class="btn-box">
+                      <a href="" class="btn-1">
+                        Buy now
+                      </a>
+                      <a href="" class="btn-2">
+                        Contact
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="slider_img-box1">
+                    <img src="images/paseo.jpg" class="rounded-circle" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-4 offset-md-2">
+                  <div class="slider_detail-box">
+                    <h1>
+                      Professional
+                      <span>
+                        Care Your Pet
+                      </span>
+                    </h1>
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry.
+                      Lorem Ipsum has been the industry's standard dummy text ever
+                    </p>
+                    <div class="btn-box">
+                      <a href="" class="btn-1">
+                        Buy now
+                      </a>
+                      <a href="" class="btn-2">
+                        Contact
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="slider_img-box2">
+                    <img src="images/paseo.jpg" class="rounded-circle" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-4 offset-md-2">
+                  <div class="slider_detail-box">
+                    <h1>
+                      Professional
+                      <span>
+                        Care Your Pet
+                      </span>
+                    </h1>
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry.
+                      Lorem Ipsum has been the industry's standard dummy text ever
+                    </p>
+                    <div class="btn-box">
+                      <a href="" class="btn-1">
+                        Buy now
+                      </a>
+                      <a href="" class="btn-2">
+                        Contact
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="slider_img-box3">
+                    <img src="images/paseo.jpg" class="rounded-circle" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+
+    </section>
+    <!-- end slider section -->
+  </div>
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="../images/paseopng-fotor-bg-remover-20231030153644.png" class="img-fluid" alt="Responsive image">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <h2 class="custom_heading">
+              Acerca de
+              <span>
+                Nosotros
+              </span>
+            </h2>
+            <p>
+              Nuestro equipo de amantes de los animales está comprometido a brindar un paseo seguro, divertido y
+              saludable para tu mascota. Ya sea que necesites un paseo diario, atención especializada o una aventura en
+              grupo en el parque, estamos aquí para cubrir todas tus necesidades.
+            </p>
+
+            <p>
+              Explora nuestro sitio web para obtener más información sobre nuestros servicios, conocer a nuestro equipo
+              y descubrir lo que nuestros clientes satisfechos dicen sobre nosotros. Estamos ansiosos por conocerte a ti
+              y a tu querido amigo peludo. ¡Contáctanos hoy para programar su próximo paseo! Tu mascota merece lo mejor,
+              y eso es exactamente lo que ofrecemos. ¡Gracias por confiar en nosotros para el cuidado
+              de tus mascotas!
+            </p>
+            <!-- <div>
+              <a href="">
+                About More
+              </a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- service section -->
+
+  <section class="service_section layout_padding">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 offset-md-2">
+          <a name="servicios">
+            <h2 class="custom_heading">
+              Nuestros <span> Servicios </span>
+            </h2>
+          </a>
+          <div class="container layout_padding2">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="img_box">
+                  <img
+                    src="../images/110882338-voluntarios-ayudan-a-pasear-perros-animales-ilustración-vectorial-fotor-bg-remover-20231030155244.png"
+                    alt="">
+                </div>
+                <div class="detail_box">
+                  <h6>
+                    Paseo de tus mascotas
+                  </h6>
+                  <p>
+                    Dale a tu mascota la atención que se merece. Nuestros paseos cuidadosamente programados mantendrán a
+                    tu amigo de cuatro patas feliz y activo. ¡Reserva ahora!
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="img_box">
+                  <img src="../images/s-2.png" alt="">
+                </div>
+                <div class="detail_box">
+                  <h6>
+                    Alimentacion
+                  </h6>
+                  <p>
+                    En Walking legs, cuidamos y alimentamos a tu mascota como parte de nuestra familia. Confía en
+                    nosotros para su bienestar. ¡Contáctanos ahora!
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="img_box">
+                  <img src="../images/s-3.png" alt="">
+                </div>
+                <div class="detail_box">
+                  <h6>
+                    Cuidado y aseo
+                  </h6>
+                  <p>
+                    Dale a tu mascota el aseo que se merece. En walking legs, ofrecemos baños y cortes de pelo de
+                    primera calidad. Haz que tu amigo peludo luzca y se sienta genial. ¡Reserva ahora!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div>
+            <a href="">
+              Read More
+            </a>
+          </div> -->
+        </div>
+        <div class="col-md-4">
+          <img src="../images/494b49727a62b580024be500be9caf60-fotor-bg-remover-20231030153818.png" alt="" class="w-100">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- end service section -->
+
+
+
+  <!-- gallery section -->
+  <section class="gallery-section layout_padding">
+    <div class="container">
+      <a name="galeria">
+        <h2>
+          Nuestra galeria
+        </h2>
+      </a>
+    </div>
+    <div class="container ">
+      <div class="img_box box-1">
+        <img src="../images/g-1.png" alt="">
+      </div>
+      <div class="img_box box-2">
+        <img src="../images/g-2.png" alt="">
+      </div>
+      <div class="img_box box-3">
+        <img src="../images/g-3.png" alt="">
+      </div>
+      <div class="img_box box-4">
+        <img src="../images/paseador-de-perros_e0adb6d8_3.jpg" alt="">
+      </div>
+      <div class="img_box box-5">
+        <img src="../images/g-5.png" alt="">
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- end gallery section -->
+
+  <!-- buy section -->
+
+  <!-- <section class="buy_section layout_padding">
+    <div class="container">
+      <h2>
+        You Can Buy Pet From Our Clinic
+      </h2>
+      <p>
+        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+      </p>
+      <div class="d-flex justify-content-center">
+        <a href="">
+          Buy Now
+        </a>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- end buy section -->
+
+  <!-- client section -->
+  <br>
+  <section class="client_section layout_padding-bottom">
+    <div class="container">
+      <a name="clientes">
+        <h2 class="custom_heading text-center">
+          Lo que dicen Nuestros
+          <span>
+            Clientes
+          </span>
+        </h2>
+      </a>
+      <!-- <p class="text-center">
+        orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut la
+      </p> -->
+      <div id="carouselExample2Indicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExample2Indicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExample2Indicators" data-slide-to="1"></li>
+          <li data-target="#carouselExample2Indicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="layout_padding2 pl-100">
+              <div class="client_container ">
+                <div class="img_box">
+                  <img src="../images/client.jpg" alt="">
+                </div>
+                <div class="detail_box">
+                  <h5>
+                    Sandy Mark
+                  </h5>
+                  <p>
+                    "Estoy encantada con los servicios de Walking Legs. Mi mascota significa el mundo para mí,
+                    y encontrar un lugar que ofrezca cuidado y alimentación de alta calidad ha sido un alivio. Siempre
+                    puedo contar con ellos para mantener a mi peludo amigo feliz y saludable.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="layout_padding2 pl-100">
+              <div class="client_container ">
+                <div class="img_box">
+                  <img src="../images/opinion.jpg  " width="210px" alt="">
+                </div>
+                <div class="detail_box">
+                  <h5>
+                    Andres Gomez
+                  </h5>
+                  <p>
+                    "No puedo expresar lo agradecido que estoy con Walking legs por el increíble cuidado y alimentación
+                    que brindan a mi mascota. Han demostrado un amor genuino por los animales, y eso se refleja en la
+                    atención que le brindan a mi compañero peludo. Desde los paseos hasta las comidas, sé que mi mascota
+                    está en las mejores manos. ¡Son excepcionales!"
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--  <div class="carousel-item">
+            <div class="layout_padding2 pl-100">
+              <div class="client_container ">
+                <div class="img_box">
+                  <img src="images/client.jpg" alt="">
+                </div>
+                <div class="detail_box">
+                  <h5>
+                    Sandy Mark
+                  </h5>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et
+                    dolore
+                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                    ea
+                    commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+  <!-- end client section -->
+
+  <!-- map section -->
+
+  <section class="map_section">
+    <div id="map" class="h-100 w-100 ">
+    </div>
+
+    <div class="form_container ">
+      <div class="row">
+        <div class=" col-8 col-md-8 col-sm-10 offset-md-4">
+          <form action="">
+            <div class="text-center">
+              <a name="contacto">
+                <h3>
+                  Contactenos
+                </h3>
+              </a>
+            </div>
+            <div>
+              <input type="text" placeholder="Nombre" class="pt-3">
+            </div>
+            <div>
+              <input type=" text" placeholder="Telefono">
+            </div>
+            <div>
+              <input type="email" placeholder="Email">
+            </div>
+            <div>
+              <input type="text" class="message-box" placeholder="Mensaje">
+            </div>
+            <div class="d-flex justify-content-center">
+              <button>
+                ENVIAR
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      
+
+      
+    </div>
+    </div>
+  </section>
+
+
+  <!-- end map section -->
+
+  <!-- info section -->
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="info_items">
+        <a href="">
+          <div class="item ">
+            <div class="img-box box-1">
+              <img src="" alt="">
+            </div>
+            <div class="detail-box">
+              <p>
+                Ubicacion
+              </p>
+            </div>
+          </div>
+        </a>
+        <a href="">
+          <div class="item ">
+            <div class="img-box box-2">
+              <img src="" alt="">
+            </div>
+            <div class="detail-box">
+              <p>
+                +57 3004567897
+              </p>
+            </div>
+          </div>
+        </a>
+        <a href="">
+          <div class="item ">
+            <div class="img-box box-3">
+              <img src="" alt="">
+            </div>
+            <div class="detail-box">
+              <p>
+                walkinglegs@gmail.com
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>-->
+
+  <!-- end info_section -->
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <p>
+      &copy; 2023 All Rights Reserved By
+      Walking legs
+    </p>
+  </section>
+  <!-- footer section -->
+
+  <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.js"></script>
+  <script src="../js/axioscerrarsesion.js"></script>
+  <script src="../js/axiosolicitarpaseo.js"></script>
+
+ <!-- <script>
+    // This example adds a marker to indicate the position of Bondi Beach in Sydney,
+    // Australia.
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 11,
+        center: {
+          lat: 40.645037,
+          lng: -73.880224
+        },
+      });
+
+      var image = 'images/maps-and-flags.png';
+      var beachMarker = new google.maps.Marker({
+        position: {
+          lat: 40.645037,
+          lng: -73.880224
+        },
+        map: map,
+        icon: image
+      });
+    }
+  </script>-->
+  <!-- google map js -->
+  <script src="../js/axioscerrarsesion.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap">
+  </script>
+  <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- end google map js -->
+
+</body>
+
+</html>
