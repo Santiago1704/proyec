@@ -9,9 +9,6 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-// Definir rutas para operaciones CRUD en Clientes, Collares y Ventas
-
-// obtener todos los clientes
 app.get('/clientes', async (req, res) => {
   try {
     const clientes = await Cliente.findAll();
@@ -22,12 +19,11 @@ app.get('/clientes', async (req, res) => {
   }
 });
 
-// Sincronizar modelos con la base de datos y arrancar el servidor
 async function startServer() {
   try {
     await sequelize.authenticate();
     console.log('Conexión establecida correctamente con la base de datos.');
-    await sequelize.sync(); // Esto sincronizará todos los modelos con la base de datos.
+    await sequelize.sync();
     app.listen(PORT, () => {
       console.log(`Servidor Express escuchando en el puerto ${PORT}`);
     });
