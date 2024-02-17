@@ -27,7 +27,7 @@ async function startServer() {
   try {
     await sequelize.authenticate();
     console.log('Conexión establecida correctamente con la base de datos.');
-    await sequelize.sync(); // Esto sincronizará todos los modelos con la base de datos.
+    await sequelize.sync();
     app.listen(PORT, () => {
       console.log(`Servidor Express escuchando en el puerto ${PORT}`);
     });
