@@ -1,8 +1,8 @@
 const express = require('express');
-const sequelize = require('./database');
-const Cliente = require('./models/cliente');
-const Collar = require('./models/collar');
-const Venta = require('./models/venta');
+const sequelize = require('./models/database.js');
+const Cliente = require('./models/client.js');
+const Collar = require('./models/collar.js');
+const Venta = require('./models/venta.js');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,6 +19,26 @@ app.get('/clientes', async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Error al obtener los clientes' });
+  }
+});
+
+app.get('/ventas', async (req, res) => {
+  try {
+    const ventas = await Venta.findAll();
+    res.json(ventas);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error al obtener los ventas' });
+  }
+});
+
+app.get('/collares', async (req, res) => {
+  try {
+    const collares = await Collar.findAll();
+    res.json(collares);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error al obtener los collares' });
   }
 });
 
