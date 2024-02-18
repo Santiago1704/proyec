@@ -22,7 +22,7 @@ app.add_middleware(
 MYSQL_USER = 'root'
 MYSQL_PASSWORD = ''
 MYSQL_HOST = 'localhost'
-MYSQL_DB = 'walking_legs'
+MYSQL_DB = 'base_de_datos_normalizada'
 
 # Configuración del Contexto de la Contraseña
 """ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto") """
