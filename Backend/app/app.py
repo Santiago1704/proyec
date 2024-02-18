@@ -1,4 +1,4 @@
-#Importando  flask y algunos paquetes
+
 from fastapi import FastAPI, HTTPException, Request, Depends, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
