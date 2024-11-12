@@ -14,8 +14,22 @@
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
 </head>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const exportarAPDF = () => {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            doc.autoTable({ html: '#tablacontacs' });
+            doc.save('usuarios.pdf');
+        };
+
+        document.querySelector('.btn-danger').addEventListener('click', exportarAPDF);
+    });
+</script>
 <body onload="obtener_usuarios()" class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
@@ -186,29 +200,9 @@
                                     <i class="fas fa-chart-bar me-1"></i>
                                     Diagrama de barras de datos
                                 </div>
-                                <div class="card-body"><canvas id="grafica" width="100%" height="40">
-                                        <script>
-                                            const labels = ['Enero', 'Febrero', 'Marzo', 'Abril']
-
-                                            const graph = document.querySelector("#grafica");
-
-                                            const data = {
-                                                labels: labels,
-                                                datasets: [{
-                                                    label: "Paseos por mes",
-                                                    data: [1, 2, 3, 4],
-                                                    backgroundColor: 'rgba(9, 129, 176, 0.2)'
-                                                }]
-                                            };
-
-                                            const config = {
-                                                type: 'bar',
-                                                data: data,
-                                            };
-
-                                            new Chart(graph, config);
-                                        </script>
-                                    </canvas></div>
+                                <div class="card-body">
+                                    <iframe title="tablero" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiYjhiZjc5ODgtMGMyZC00ZTI2LTgyZDctMDgwYWE2YmNlYmY2IiwidCI6IjFlOWFhYmU4LTY3ZjgtNGYxYy1hMzI5LWE3NTRlOTI0OTlhZSIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -233,6 +227,7 @@
                                 <tbody id="tabla-usuarios">
                                     
                                 </tbody>
+                                <button class="btn btn-danger mt-4" onclick="exportarAPDF()">Exportar a PDF</button>
                             </table>
                         </div>
                     </div>

@@ -9,9 +9,6 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-// Definir rutas para operaciones CRUD en Clientes, Collares y Ventas
-
-// obtener todos los clientes
 app.get('/clientes', async (req, res) => {
   try {
     const clientes = await Cliente.findAll();
